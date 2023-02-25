@@ -7,16 +7,17 @@ from typing import Callable
 ##                                                            ##
 ##         Arbitrary quadratic function will be given.        ##
 ## Return the optimal point(global minimum) of given function ##
-##                                                            ##
+##          Condition: highest order term is positive         ##
 ##                  Made by @jangyoujin0917                   ##
 ##                                                            ##
 
 
-def test_func(x): # function for testing; evaluation will be different.
+def test_func(x): # function for testing;function for evaluation will be different.
     return x ** 2
 
 
 def solution(func: Callable, start_point: float): # DO NOT MODIFY FUNCTION NAME
+    
     ### IMPLEMENT FROM HERE
     
 

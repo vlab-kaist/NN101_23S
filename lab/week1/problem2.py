@@ -7,7 +7,7 @@ from typing import Callable
 ##                                                            ##
 ##           Arbitrary quartic function will be given.        ##
 ## Return the optimal point(global minimum) of given function ##
-##                                                            ##
+##          Condition: highest order term is positive         ##
 ##                  Made by @jangyoujin0917                   ##
 ##                                                            ##
 
