@@ -16,8 +16,7 @@ def test_func(x): # function for testing;function for evaluation will be differe
     return x ** 2
 
 
-def solution(func: Callable, start_point: float): # DO NOT MODIFY FUNCTION NAME
-    
+def solution(func: Callable, start_point: float): # DO NOT MODIFY FUNCTION NAME    
     ### IMPLEMENT FROM HERE
     
 
