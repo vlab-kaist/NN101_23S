@@ -1,28 +1,33 @@
----
 name: LAB Submission Form
-about: Use this template to submit your lab assignment.
-title: '[LAB] Week X_yourname'
+description: Use this template to submit your lab assignment.
+title: "[LAB] Week X_yourname"
+labels: ["lab"]
+body:
+  - type: dropdown
+    id: week
+    attributes:
+      label: Week
+      description: Please select the week of lecture for which you are submitting the assignment:
+      options:
+        - Week 1
+    validations:
+      required: true
 
----
-## Week
+  - type: textarea
+      id: code
+      attributes:
+        label: Source Code
+        description: Please paste your code here.
+        render: python
 
-Please select the week of lecture for which you are submitting the assignment:
+  - type: textarea
+      id: desc
+      attributes:
+        label: Description
+        description: Please briefly describe what your code does.
 
-<select name="Week" required>
-<option value="" selected disabled>Please select</option>
-<option value="1">Week 1</option>
-</select>
-
-## Code Submission
-
-Please submit your code below.
-
-<textarea name="Code" placeholder="Please paste your code here." required></textarea>
-
-<textarea name="Description" placeholder="Please briefly describe what your code does, including any libraries or frameworks used." required></textarea>
-
-**Output Description (Optional)**
-
-If your code generates output, please describe it here.
-
-<textarea name="Output Description" placeholder="(Optional) Please describe the output that your code generated."></textarea>
+  - type: textarea
+      id: output
+      attributes:
+        label: Output (Optional)
+        description: (Optional) Please describe the output that your code generated.
