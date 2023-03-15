@@ -7,7 +7,7 @@ body:
     id: week
     attributes:
       label: Week
-      description: Please select the week of lecture for which you are submitting the assignment:
+      description: "Please select the week of lecture for which you are submitting the assignment:"
       options:
         - Week 1
     validations:
