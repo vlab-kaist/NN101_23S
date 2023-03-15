@@ -14,20 +14,20 @@ body:
       required: true
 
   - type: textarea
-      id: code
-      attributes:
-        label: Source Code
-        description: Please paste your code here.
-        render: python
+    id: code
+    attributes:
+      label: Source Code
+      description: Please paste your code here.
+      render: python
 
   - type: textarea
-      id: desc
-      attributes:
-        label: Description
-        description: Please briefly describe what your code does.
+    id: desc
+    attributes:
+      label: Description
+      description: Please briefly describe what your code does.
 
   - type: textarea
-      id: output
-      attributes:
-        label: Output (Optional)
-        description: (Optional) Please describe the output that your code generated.
+    id: output
+    attributes:
+      label: Output (Optional)
+      description: (Optional) Please describe the output that your code generated.
