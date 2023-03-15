@@ -1,4 +1,4 @@
-from jax import grad
+import torch
 from random import random 
 from typing import Callable
 
