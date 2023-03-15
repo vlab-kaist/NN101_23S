@@ -1,15 +1,16 @@
 name: LAB Submission Form
 description: Use this template to submit your lab assignment.
-title: "[LAB] Week X_yourname"
+title: "[LAB] Week X_Problem X_yourname"
 labels: ["lab"]
 body:
   - type: dropdown
     id: week
     attributes:
       label: Week
-      description: "Please select the week of lecture for which you are submitting the assignment:"
+      description: "Please select the assignment:"
       options:
-        - Week 1
+        - Week 1_Problem 1
+        - Week 1_Problem 2
     validations:
       required: true
 
@@ -19,12 +20,16 @@ body:
       label: Source Code
       description: Please paste your code here.
       render: python
+    validations:
+      required: true
 
   - type: textarea
     id: desc
     attributes:
       label: Description
       description: Please briefly describe what your code does.
+    validations:
+      required: true
 
   - type: textarea
     id: output
