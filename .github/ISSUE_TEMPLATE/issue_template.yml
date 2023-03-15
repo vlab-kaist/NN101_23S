@@ -1,12 +1,12 @@
 name: LAB Submission Form
 description: Use this template to submit your lab assignment.
 title: "[LAB] Week X_Problem X_yourname"
-labels: ["lab"]
+labels: ["lab", "pending"]
 body:
   - type: dropdown
-    id: week
+    id: problem
     attributes:
-      label: Week
+      label: Problem
       description: "Please select the assignment:"
       options:
         - Week 1_Problem 1
