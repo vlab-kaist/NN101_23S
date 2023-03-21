@@ -1,0 +1,55 @@
+name: Autograding
+run-name: Run checker.py for issue
+
+on:
+  issues:
+    types: [ opened, edited, transferred ]
+
+jobs:
+  autograde-issue:
+    runs-on: self-hosted
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+
+    - name: issue_raw file trimming
+      id: vars
+      working-directory: ./.github
+      run: |
+        echo '${{ github.event.issue.body }}' > issue_raw
+        bash trim.sh
+        echo "lab_week=$(cat issue_metadata | awk '{print $1}')" >> $GITHUB_OUTPUT
+        echo "lab_prob=$(cat issue_metadata | awk '{print $2}')" >> $GITHUB_OUTPUT
+      
+    - name: scp - send trimmed python file
+      run: |
+        scp ./.github/issue_trimmed.py vlab:~/${{ github.event.issue.user.login }}.py
+    
+    - name: ssh - run commands on v1 server
+      id: ssh_autograding
+      run: |
+        echo "text<<EOF" >> $GITHUB_OUTPUT
+        ssh vlab 'cd ~/NN101_23S_solutions/NN101/${{ steps.vars.outputs.lab_week }}*/Problem${{ steps.vars.outputs.lab_prob }} && mv ~/${{ github.event.issue.user.login }}.py ./submitted/ && conda activate NN101 && python checker.py ./submitted/${{ github.event.issue.user.login }}.py' >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+  
+    - name: issue commenting - success
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          This is an auto-generated grading output.
+          ${{ join(steps.ssh_autograding.outputs.*, '\n') }}
+
+
+    - name: issue commenting - faliure
+      if: failure()
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          This is an auto-generated grading output.
+          Your code failed to run. Please check again.
