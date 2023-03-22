@@ -29,7 +29,7 @@ def training(x_train : list[float], y_train : list[float]) -> list[float]: # DO 
 def predict(x_train : list[float], y_train : list[float], x_test : list[float]) -> list[float]: # DO NOT MODIFY FUNCTION NAME
     pass ### IMPLEMENT FROM HERE
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     x_train = [0.0, 1.0, 2.0, 3.0, 4.0]
     y_train = [2.0, 4.0, 6.0, 8.0, 10.0] # Note that not all test cases give clear line.
     x_test = [5.0, 10.0, 8.0]
