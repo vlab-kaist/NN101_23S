@@ -1,4 +1,4 @@
-from jax import grad
+import torch
 from random import random 
 from typing import Callable
 
@@ -12,13 +12,12 @@ from typing import Callable
 ##                                                            ##
 
 
-def test_func(x): # function for testing;function for evaluation will be different.
-    return x ** 2
-
-
-def solution(func: Callable, start_point: float): # DO NOT MODIFY FUNCTION NAME    
-    ### IMPLEMENT FROM HERE
+def solution(func: Callable, start_point: float) -> float: # DO NOT MODIFY FUNCTION NAME    
+    pass ### IMPLEMENT FROM HERE
     
 
 if __name__ == '__main__':
-    print(solution(test_func, 10*random()))
+    def test_func(x): # function for testing;function for evaluation will be different.
+        return x ** 2
+    t = 10*random()
+    print(solution(test_func, t))
