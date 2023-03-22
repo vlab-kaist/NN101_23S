@@ -11,6 +11,8 @@ body:
       options:
         - Week 1_Problem 1
         - Week 1_Problem 2
+        - Week 2_Problem 1
+        - Week 2_Problem 2
     validations:
       required: true
 
