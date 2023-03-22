@@ -33,7 +33,7 @@ def training(x_train : list[list[float]], y_train : list[float]) -> tuple[list[f
 def predict(x_train : list[list[float]], y_train : list[float], x_test : list[list[float]]) -> list[float]: # DO NOT MODIFY FUNCTION NAME
     pass ### IMPLEMENT FROM HERE
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     x_train = [[0., 1.], [1., 0.], [2., 2.], [3., 1.], [4., 3.]]
     y_train = [3., 2., 7., 6., 11.] # y = x_0 + 2*x_1 + 1 # Note that not all test cases give clear line.
     x_test = [[5., 3.], [10., 6.], [8., 9.]]
