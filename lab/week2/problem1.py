@@ -35,7 +35,7 @@ if __name__ == "__main__":
     x_test = [5.0, 10.0, 8.0]
     
     w, b = training(x_train, y_train)
-    y_test = predict(x_train, y_train)
+    y_test = predict(x_train, y_train, x_test)
 
     print(w, b)
     print(y_test)
