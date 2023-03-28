@@ -13,6 +13,7 @@ body:
         - Week 1_Problem 2
         - Week 2_Problem 1
         - Week 2_Problem 2
+        - Week 3_Problem 1
     validations:
       required: true
 
